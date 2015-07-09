@@ -1,4 +1,4 @@
-{overload} = require "./index"
+{overload} = require "../src/index"
 
 class Multiplier 
   

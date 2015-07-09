@@ -1,7 +1,5 @@
 {type} = require "fairmont"
 
-$ = module.exports
-
 class Signature 
   
   constructor: -> 
@@ -27,9 +25,10 @@ class Signature
       console.log @signatures
       @failHandler
     
-$.overload = (declarator) ->
-  signature = new Signature
-  match = (types...,handler) -> signature.on types..., handler
-  fail = (handler) -> signature.fail handler
-  declarator(  match, fail )
-  (args...) -> (signature.match( args )).call(this, args...)
+module.exports =
+  overload: (declarator) ->
+    signature = new Signature
+    match = (types...,handler) -> signature.on types..., handler
+    fail = (handler) -> signature.fail handler
+    declarator(  match, fail )
+    (args...) -> (signature.match( args )).call(this, args...)

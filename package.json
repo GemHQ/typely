@@ -1,10 +1,11 @@
 {
   "name": "typely",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Lightweight (meaning relatively fast) type-checking in CoffeeScript. ",
-  "main": "index.coffee",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "coffee test.coffee"
+    "prepublish": "coffee -o lib/ -c src/*.coffee",
+    "test": "coffee test/index.coffee"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,6 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "fairmont": "~0.4.1"
+    "fairmont": "file:../fairmont"
   }
 }
